@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "YoHoLauncher (Package)": {
+      "commandName": "MsixPackage"
+    },
+    "YoHoLauncher (Unpackaged)": {
+      "commandName": "Project"
+    }
+  }
+}
