@@ -30,5 +30,10 @@ namespace YoHoLauncher.Views
         {
             this.InitializeComponent();
         }
+
+        private void MainNav_ItemInvoked(NavigationView sender, NavigationViewItemInvokedEventArgs args)
+        {
+            MainFrame.Navigate(Type.GetType(((NavigationViewItem)args.InvokedItemContainer).Tag.ToString()));
+        }
     }
 }

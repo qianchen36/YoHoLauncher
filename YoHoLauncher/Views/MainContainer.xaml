@@ -11,6 +11,85 @@
     mc:Ignorable="d">
 
     <Grid>
-
+        <Border
+            x:Name="AppTitleBar"
+            Height="{Binding CompactPaneLength, ElementName=MainNav}"
+            Margin="48,0,0,0"
+            VerticalAlignment="Top"
+            x:FieldModifier="public"
+            Background="Transparent"
+            Canvas.ZIndex="1"
+            IsHitTestVisible="True">
+            <StackPanel
+                x:Name="AppTitle"
+                Margin="28,0,0,0"
+                VerticalAlignment="Center"
+                Orientation="Horizontal">
+                <Border VerticalAlignment="Center" CornerRadius="2.5">
+                    <Image
+                        Width="24"
+                        Height="24"
+                        Source="/Assets/icon.ico" />
+                </Border>
+                <TextBlock
+                    Margin="15,0,0,0"
+                    VerticalAlignment="Center"
+                    FontSize="14"
+                    FontWeight="SemiBold"
+                    Opacity="0.8"
+                    Text="HoYo! Launcher" />
+            </StackPanel>
+        </Border>
+        
+        <NavigationView
+            x:Name="MainNav"
+            Canvas.ZIndex="0"
+            PaneDisplayMode="LeftCompact"
+            IsSettingsVisible="False"
+            IsBackEnabled="{Binding CanGoBack, ElementName=ContentFrame}"
+            ItemInvoked="MainNav_ItemInvoked">
+            <NavigationView.MenuItems>
+                <NavigationViewItem
+                    IsSelected="True"
+                    Content="Honkai Impact 3"
+                    Tag="YoHoLauncher.Views.Pages.Games.HonkaiImpact3">
+                    <NavigationViewItem.Icon>
+                        <ImageIcon Source="/Assets/Icons/game-bh3.png" />
+                    </NavigationViewItem.Icon>
+                </NavigationViewItem>
+                <NavigationViewItem
+                    Content="Genshin Impact"
+                    Tag="YoHoLauncher.Views.Pages.Games.GenshinImpact">
+                    <NavigationViewItem.Icon>
+                        <ImageIcon Source="/Assets/Icons/game-ys.png" />
+                    </NavigationViewItem.Icon>
+                </NavigationViewItem>
+                <NavigationViewItem
+                    Content="Honkai: Star Rail"
+                    Tag="YoHoLauncher.Views.Pages.Games.HonkaiStarRail">
+                    <NavigationViewItem.Icon>
+                        <ImageIcon Source="/Assets/Icons/game-sr.png" />
+                    </NavigationViewItem.Icon>
+                </NavigationViewItem>
+                <NavigationViewItem
+                    Content="Zenless Zone Zero"
+                    Tag="YoHoLauncher.Views.Pages.Games.ZenlessZoneZero">
+                    <NavigationViewItem.Icon>
+                        <ImageIcon Source="/Assets/Icons/game-zzz.png" />
+                    </NavigationViewItem.Icon>
+                </NavigationViewItem>
+            </NavigationView.MenuItems>
+            
+            <NavigationView.FooterMenuItems>
+                <NavigationViewItem
+                    Icon="Setting"
+                    Content="Settings"
+                    Tag="YoHoLauncher.Views.Pages.Setting" />
+            </NavigationView.FooterMenuItems>
+            
+            <Frame
+                x:Name="MainFrame"
+                Background="Transparent"/>
+        </NavigationView>
     </Grid>
 </Page>

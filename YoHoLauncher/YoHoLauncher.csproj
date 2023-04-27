@@ -16,6 +16,11 @@
   <ItemGroup>
     <None Remove="Views\Home.xaml" />
     <None Remove="Views\MainContainer.xaml" />
+    <None Remove="Views\Pages\Games\GenshinImpact.xaml" />
+    <None Remove="Views\Pages\Games\HonkaiImpact3.xaml" />
+    <None Remove="Views\Pages\Games\HonkaiStarRail.xaml" />
+    <None Remove="Views\Pages\Games\ZenlessZoneZero.xaml" />
+    <None Remove="Views\Pages\Setting.xaml" />
   </ItemGroup>
 
   <ItemGroup>
@@ -34,8 +39,33 @@
     <ProjectCapability Include="Msix" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Views\Pages\" />
+    <Folder Include="Assets\Backgrounds\" />
     <Folder Include="Models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="Views\Pages\Setting.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="Views\Pages\Games\ZenlessZoneZero.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="Views\Pages\Games\HonkaiStarRail.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="Views\Pages\Games\HonkaiImpact3.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="Views\Pages\Games\GenshinImpact.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Page Update="Views\Home.xaml">

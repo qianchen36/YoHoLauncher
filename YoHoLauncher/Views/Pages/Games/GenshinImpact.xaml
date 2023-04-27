@@ -1,0 +1,55 @@
+<!-- Copyright (c) Microsoft Corporation and Contributors. -->
+<!-- Licensed under the MIT License. -->
+
+<Page
+    x:Class="YoHoLauncher.Views.Pages.Games.GenshinImpact"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:YoHoLauncher.Views.Pages.Games"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid>
+        <Button
+            Content="Genshin Impact"
+            Canvas.ZIndex="1"
+            Height="32" Width="Auto"
+            VerticalAlignment="Top"
+            Margin="188,8,0,0"/>
+
+        <Grid Canvas.ZIndex="0" >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="32" />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+
+            <Grid
+            Grid.Row="0"
+            Background="Gray"
+            VerticalAlignment="Center">
+                
+            </Grid>
+
+            <NavigationView
+            Grid.Row="1"
+            x:Name="GenshinImpactNav"
+            PaneTitle="Genshin"
+            PaneDisplayMode="Top"
+            IsSettingsVisible="False"
+            IsBackButtonVisible="Collapsed">
+                <NavigationView.MenuItems>
+                    <NavigationViewItem Content="Launch" Tag="SamplePage1" />
+                    <NavigationViewItem Content="News" Tag="SamplePage2" />
+                    <NavigationViewItem Content="Tools" Tag="SamplePage3" />
+                    <NavigationViewItem Content="Settings" Tag="SamplePage4" />
+                </NavigationView.MenuItems>
+                <Frame x:Name="GenshinImpactFrame">
+                    <Frame.Background>
+                        <ImageBrush ImageSource="/Assets/Backgrounds/default.png" Stretch="UniformToFill"/>
+                    </Frame.Background>
+                </Frame>
+            </NavigationView>
+        </Grid>
+    </Grid>
+</Page>
