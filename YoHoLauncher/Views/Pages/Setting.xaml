@@ -8,10 +8,29 @@
     xmlns:local="using:YoHoLauncher.Views.Pages"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    mc:Ignorable="d"
-    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    mc:Ignorable="d">
 
     <Grid>
+        <Grid Canvas.ZIndex="0" >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="32" />
+                <RowDefinition />
+            </Grid.RowDefinitions>
 
+            <NavigationView
+            Grid.Row="1"
+            x:Name="SettingNav"
+            PaneDisplayMode="Top"
+            IsSettingsVisible="False"
+            IsBackButtonVisible="Collapsed">
+                <NavigationView.MenuItems>
+                    <NavigationViewItem Content="Setting1" Tag="Setting1" />
+                    <NavigationViewItem Content="Setting2" Tag="Setting2" />
+                    <NavigationViewItem Content="Setting3" Tag="Setting3" />
+                    <NavigationViewItem Content="About" Tag="About" />
+                </NavigationView.MenuItems>
+                <Frame x:Name="SettingFrame" />
+            </NavigationView>
+        </Grid>
     </Grid>
 </Page>

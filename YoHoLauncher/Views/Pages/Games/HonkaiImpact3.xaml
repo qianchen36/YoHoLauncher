@@ -20,16 +20,9 @@
 
         <Grid Canvas.ZIndex="0" >
             <Grid.RowDefinitions>
-                <RowDefinition Height="32" />
+                <RowDefinition Height="42" />
                 <RowDefinition />
             </Grid.RowDefinitions>
-
-            <Grid
-            Grid.Row="0"
-            Background="Gray"
-            VerticalAlignment="Center">
-
-            </Grid>
 
             <NavigationView
             Grid.Row="1"
@@ -39,11 +32,15 @@
             IsSettingsVisible="False"
             IsBackButtonVisible="Collapsed">
                 <NavigationView.MenuItems>
-                    <NavigationViewItem Content="Launch" Tag="SamplePage1" />
-                    <NavigationViewItem Content="News" Tag="SamplePage2" />
-                    <NavigationViewItem Content="Tools" Tag="SamplePage3" />
-                    <NavigationViewItem Content="Settings" Tag="SamplePage4" />
+                    <NavigationViewItem Icon="Play" Content="Launch" Tag="SamplePage1" IsSelected="True"/>
+                    <NavigationViewItem Icon="Message" Content="News" Tag="SamplePage2" />
+                    <NavigationViewItem Icon="Edit" Content="Tools" Tag="SamplePage3" />
                 </NavigationView.MenuItems>
+
+                <NavigationView.FooterMenuItems>
+                    <NavigationViewItem Icon="Setting" Content="Settings" Tag="YoHoLauncher.Views.Pages.Setting" />
+                </NavigationView.FooterMenuItems>
+                
                 <Frame x:Name="HonkaiImpact3Frame">
                     <Frame.Background>
                         <ImageBrush ImageSource="/Assets/Backgrounds/default.png" Stretch="UniformToFill"/>

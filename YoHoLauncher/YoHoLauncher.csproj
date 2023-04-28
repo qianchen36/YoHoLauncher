@@ -4,24 +4,16 @@
     <TargetFramework>net6.0-windows10.0.19041.0</TargetFramework>
     <TargetPlatformMinVersion>10.0.17763.0</TargetPlatformMinVersion>
     <RootNamespace>YoHoLauncher</RootNamespace>
-    <ApplicationManifest>app.manifest</ApplicationManifest>
     <Platforms>x86;x64;ARM64</Platforms>
     <RuntimeIdentifiers>win10-x86;win10-x64;win10-arm64</RuntimeIdentifiers>
     <PublishProfile>win10-$(Platform).pubxml</PublishProfile>
     <UseWinUI>true</UseWinUI>
     <WindowsPackageType>None</WindowsPackageType>
     <EnableMsixTooling>true</EnableMsixTooling>
+    <StartupObject>YoHoLauncher.Program</StartupObject>
     <ApplicationIcon>Assets\icon.ico</ApplicationIcon>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
   </PropertyGroup>
-  <ItemGroup>
-    <None Remove="Views\Home.xaml" />
-    <None Remove="Views\MainContainer.xaml" />
-    <None Remove="Views\Pages\Games\GenshinImpact.xaml" />
-    <None Remove="Views\Pages\Games\HonkaiImpact3.xaml" />
-    <None Remove="Views\Pages\Games\HonkaiStarRail.xaml" />
-    <None Remove="Views\Pages\Games\ZenlessZoneZero.xaml" />
-    <None Remove="Views\Pages\Setting.xaml" />
-  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Microsoft.WindowsAppSDK" Version="1.3.230331000" />

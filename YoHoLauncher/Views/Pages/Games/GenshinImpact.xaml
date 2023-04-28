@@ -24,13 +24,6 @@
                 <RowDefinition />
             </Grid.RowDefinitions>
 
-            <Grid
-            Grid.Row="0"
-            Background="Gray"
-            VerticalAlignment="Center">
-                
-            </Grid>
-
             <NavigationView
             Grid.Row="1"
             x:Name="GenshinImpactNav"
