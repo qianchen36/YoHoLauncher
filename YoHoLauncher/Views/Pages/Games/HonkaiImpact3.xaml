@@ -8,10 +8,48 @@
     xmlns:local="using:YoHoLauncher.Views.Pages.Games"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    mc:Ignorable="d"
-    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    mc:Ignorable="d">
 
     <Grid>
+        <Button
+            Content="Honkai Impact 3"
+            Canvas.ZIndex="1"
+            Height="32" Width="Auto"
+            VerticalAlignment="Top"
+            Margin="188,8,0,0"/>
 
+        <Grid Canvas.ZIndex="0" >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="32" />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+
+            <Grid
+            Grid.Row="0"
+            Background="Gray"
+            VerticalAlignment="Center">
+
+            </Grid>
+
+            <NavigationView
+            Grid.Row="1"
+            x:Name="HonkaiImpact3Nav"
+            PaneTitle="Genshin"
+            PaneDisplayMode="Top"
+            IsSettingsVisible="False"
+            IsBackButtonVisible="Collapsed">
+                <NavigationView.MenuItems>
+                    <NavigationViewItem Content="Launch" Tag="SamplePage1" />
+                    <NavigationViewItem Content="News" Tag="SamplePage2" />
+                    <NavigationViewItem Content="Tools" Tag="SamplePage3" />
+                    <NavigationViewItem Content="Settings" Tag="SamplePage4" />
+                </NavigationView.MenuItems>
+                <Frame x:Name="HonkaiImpact3Frame">
+                    <Frame.Background>
+                        <ImageBrush ImageSource="/Assets/Backgrounds/default.png" Stretch="UniformToFill"/>
+                    </Frame.Background>
+                </Frame>
+            </NavigationView>
+        </Grid>
     </Grid>
 </Page>

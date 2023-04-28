@@ -15,6 +15,7 @@ using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.Graphics;
 
 // To learn more about WinUI, the WinUI project structure,
 // and more about our project templates, see: http://aka.ms/winui-project-info.
@@ -26,14 +27,57 @@ namespace YoHoLauncher.Views
     /// </summary>
     public sealed partial class MainContainer : Page
     {
+        public static XamlRoot _XamlRoot { get; private set; }
+
         public MainContainer()
         {
             this.InitializeComponent();
         }
 
+        private void RefreshDragArea()
+        {
+            var scaleAdjustment = XamlRoot.RasterizationScale;
+
+            var x = (int)(AppTitleBar.Margin.Left * scaleAdjustment);
+            var y = 0;
+            var width = (int)(AppTitleBar.ActualWidth * scaleAdjustment);
+            var height = (int)(48 * scaleAdjustment);
+
+            var dragRect = new RectInt32(x, y, width, height);
+            App.MainWindow.AppWindow.TitleBar.SetDragRectangles(new[] { dragRect });
+        }
+
+        private void MainNav_Loaded(object sender, RoutedEventArgs e)
+        {
+            _XamlRoot = XamlRoot;
+
+            App.MainWindow.SetTitleBar(AppTitleBar);
+            MainFrame.Navigate(typeof(Pages.Games.HonkaiImpact3));
+
+            RefreshDragArea();
+        }
+
         private void MainNav_ItemInvoked(NavigationView sender, NavigationViewItemInvokedEventArgs args)
         {
             MainFrame.Navigate(Type.GetType(((NavigationViewItem)args.InvokedItemContainer).Tag.ToString()));
+        }
+
+        private void MainNav_BackRequested(NavigationView sender, NavigationViewBackRequestedEventArgs args)
+        {
+            MainFrame.GoBack();
+        }
+
+        private void MainFrame_Navigated(object sender, NavigationEventArgs e)
+        {
+            foreach (NavigationViewItem item in MainNav.MenuItems.Union(MainNav.FooterMenuItems).Cast<NavigationViewItem>())
+            {
+                if (Type.GetType((string)item.Tag) == e.SourcePageType)
+                {
+                    MainNav.SelectedItem = item;
+                    item.IsSelected = true;
+                    return;
+                }
+            }
         }
     }
 }

@@ -46,8 +46,10 @@
             Canvas.ZIndex="0"
             PaneDisplayMode="LeftCompact"
             IsSettingsVisible="False"
-            IsBackEnabled="{Binding CanGoBack, ElementName=ContentFrame}"
-            ItemInvoked="MainNav_ItemInvoked">
+            IsBackEnabled="{Binding CanGoBack, ElementName=MainFrame}"
+            Loaded="MainNav_Loaded"
+            ItemInvoked="MainNav_ItemInvoked"
+            BackRequested="MainNav_BackRequested">
             <NavigationView.MenuItems>
                 <NavigationViewItem
                     IsSelected="True"
@@ -89,7 +91,8 @@
             
             <Frame
                 x:Name="MainFrame"
-                Background="Transparent"/>
+                Background="Transparent"
+                Navigated="MainFrame_Navigated"/>
         </NavigationView>
     </Grid>
 </Page>
