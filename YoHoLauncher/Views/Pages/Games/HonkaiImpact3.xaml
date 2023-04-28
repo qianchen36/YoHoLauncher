@@ -12,7 +12,8 @@
 
     <Grid>
         <Button
-            Content="Honkai Impact 3"
+            x:Uid="GameName_HonkaiImpact3"
+            Content="Honkai Impact 3rd"
             Canvas.ZIndex="1"
             Height="32" Width="Auto"
             VerticalAlignment="Top"
@@ -32,13 +33,30 @@
             IsSettingsVisible="False"
             IsBackButtonVisible="Collapsed">
                 <NavigationView.MenuItems>
-                    <NavigationViewItem Icon="Play" Content="Launch" Tag="SamplePage1" IsSelected="True"/>
-                    <NavigationViewItem Icon="Message" Content="News" Tag="SamplePage2" />
-                    <NavigationViewItem Icon="Edit" Content="Tools" Tag="SamplePage3" />
+                    <NavigationViewItem
+                        x:Uid="Content_Launch"
+                        Icon="Play"
+                        Content="Launch"
+                        Tag="SamplePage1"
+                        IsSelected="True"/>
+                    <NavigationViewItem
+                        x:Uid="Content_News"
+                        Icon="Message"
+                        Content="News"
+                        Tag="SamplePage2" />
+                    <NavigationViewItem
+                        x:Uid="Content_Tools"
+                        Icon="Edit"
+                        Content="Tools"
+                        Tag="SamplePage3" />
                 </NavigationView.MenuItems>
 
                 <NavigationView.FooterMenuItems>
-                    <NavigationViewItem Icon="Setting" Content="Settings" Tag="YoHoLauncher.Views.Pages.Setting" />
+                    <NavigationViewItem
+                        x:Uid="Content_Settings"
+                        Icon="Setting"
+                        Content="Settings"
+                        Tag="YoHoLauncher.Views.Pages.Setting" />
                 </NavigationView.FooterMenuItems>
                 
                 <Frame x:Name="HonkaiImpact3Frame">

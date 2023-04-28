@@ -32,12 +32,12 @@
                         Source="/Assets/icon.ico" />
                 </Border>
                 <TextBlock
+                    x:Uid="MainContainer_Title"
                     Margin="15,0,0,0"
                     VerticalAlignment="Center"
                     FontSize="14"
                     FontWeight="SemiBold"
-                    Opacity="0.8"
-                    Text="HoYo! Launcher" />
+                    Opacity="0.8" />
             </StackPanel>
         </Border>
         
@@ -52,14 +52,16 @@
             BackRequested="MainNav_BackRequested">
             <NavigationView.MenuItems>
                 <NavigationViewItem
+                    x:Uid="GameName_HonkaiImpact3"
+                    Content="Honkai Impact 3rd"
                     IsSelected="True"
-                    Content="Honkai Impact 3"
                     Tag="YoHoLauncher.Views.Pages.Games.HonkaiImpact3">
                     <NavigationViewItem.Icon>
                         <ImageIcon Source="/Assets/Icons/game-bh3.png" />
                     </NavigationViewItem.Icon>
                 </NavigationViewItem>
                 <NavigationViewItem
+                    x:Uid="GameName_GenshinImpact"
                     Content="Genshin Impact"
                     Tag="YoHoLauncher.Views.Pages.Games.GenshinImpact">
                     <NavigationViewItem.Icon>
@@ -67,6 +69,7 @@
                     </NavigationViewItem.Icon>
                 </NavigationViewItem>
                 <NavigationViewItem
+                    x:Uid="GameName_HonkaiStarRail"
                     Content="Honkai: Star Rail"
                     Tag="YoHoLauncher.Views.Pages.Games.HonkaiStarRail">
                     <NavigationViewItem.Icon>
@@ -74,6 +77,7 @@
                     </NavigationViewItem.Icon>
                 </NavigationViewItem>
                 <NavigationViewItem
+                    x:Uid="GameName_ZenlessZoneZero"
                     Content="Zenless Zone Zero"
                     Tag="YoHoLauncher.Views.Pages.Games.ZenlessZoneZero">
                     <NavigationViewItem.Icon>
@@ -84,6 +88,7 @@
             
             <NavigationView.FooterMenuItems>
                 <NavigationViewItem
+                    x:Uid="Content_Settings"
                     Icon="Setting"
                     Content="Settings"
                     Tag="YoHoLauncher.Views.Pages.Setting" />
