@@ -8,6 +8,7 @@
     xmlns:local="using:YoHoLauncher.Views.Pages"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:labs="using:CommunityToolkit.Labs.WinUI"
     mc:Ignorable="d">
 
     <Grid>
@@ -17,20 +18,85 @@
                 <RowDefinition />
             </Grid.RowDefinitions>
 
-            <NavigationView
-            Grid.Row="1"
-            x:Name="SettingNav"
-            PaneDisplayMode="Top"
-            IsSettingsVisible="False"
-            IsBackButtonVisible="Collapsed">
-                <NavigationView.MenuItems>
-                    <NavigationViewItem Content="Setting1" Tag="Setting1" />
-                    <NavigationViewItem Content="Setting2" Tag="Setting2" />
-                    <NavigationViewItem Content="Setting3" Tag="Setting3" />
-                    <NavigationViewItem Content="About" Tag="About" />
-                </NavigationView.MenuItems>
-                <Frame x:Name="SettingFrame" />
-            </NavigationView>
+            <Grid
+                Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition Width="384" />
+                </Grid.ColumnDefinitions>
+                
+                <ScrollViewer
+                    Grid.Column="0"
+                    Margin="16,16,4,16">
+                    
+                    <StackPanel
+                        Spacing="6"
+                        Padding="0,0,8,0">
+
+                        <TextBlock
+                            x:Uid="/Settings/SubTitle_Common"
+                            Text="Common Settings"
+                            Margin="4,16,0,4"
+                            Style="{StaticResource BodyStrongTextBlockStyle}"/>
+                        <labs:SettingsCard
+                            x:Uid="/Settings/SetCard_Language"
+                            HeaderIcon="Globe"
+                            Header="Language/语言"
+                            Description="Select a Language">
+                            <ComboBox SelectedIndex="0">
+                                <ComboBoxItem Content="zh-CN, 简体中文(中国)"/>
+                                <ComboBoxItem Content="en-US, English"/>
+                            </ComboBox>
+                        </labs:SettingsCard>
+                        <labs:SettingsExpander
+                            HeaderIcon="Send"
+                            Header="This is Header"
+                            Description="A short Description">
+                            <labs:SettingsExpander.Items>
+                                <labs:SettingsCard Header="Expander Item"/>
+                            </labs:SettingsExpander.Items>
+                        </labs:SettingsExpander>
+                        <labs:SettingsCard Header="s1" Description="d1"/>
+                        <TextBlock
+                            Text="Common Settings"
+                            Margin="4,16,0,4"
+                            Style="{StaticResource BodyStrongTextBlockStyle}"/>
+                        <labs:SettingsCard Header="s1" Description="d1"/>
+                        <labs:SettingsCard Header="s1" Description="d1"/>
+                        <labs:SettingsCard Header="s1" Description="d1"/>
+                        <labs:SettingsCard Header="s1" Description="d1"/>
+                        <labs:SettingsCard Header="s1" Description="d1"/>
+                        <labs:SettingsCard Header="s1" Description="d1"/>
+                        <labs:SettingsCard Header="s1" Description="d1"/>
+                        <labs:SettingsCard Header="s1" Description="d1"/>
+                        <labs:SettingsCard Header="s1" Description="d1"/>
+                        <labs:SettingsCard Header="s1" Description="d1"/>
+                        <labs:SettingsCard Header="s1" Description="d1"/>
+                        <labs:SettingsCard Header="s1" Description="d1"/>
+                        <labs:SettingsCard Header="s1" Description="d1"/>
+                        <labs:SettingsCard Header="s1" Description="d1"/>
+                        <labs:SettingsCard Header="s1" Description="d1"/>
+                        <labs:SettingsCard Header="s1" Description="d1"/>
+                        <labs:SettingsCard Header="s1" Description="d1"/>
+                        <labs:SettingsCard Header="s1" Description="d1"/>
+                        <labs:SettingsCard Header="s1" Description="d1"/>
+                        <labs:SettingsCard Header="s1" Description="d1"/>
+                        <labs:SettingsCard Header="s1" Description="d1"/>
+                        <labs:SettingsCard Header="s1" Description="d1"/>
+                    </StackPanel>
+                </ScrollViewer>                
+                
+                <Grid
+                    Grid.Column="1"
+                    Margin="4,16,16,16"
+                    CornerRadius="8"
+                    BorderThickness="1"
+                    BorderBrush="{ThemeResource CardStrokeColorDefaultBrush}"
+                    Background="{ThemeResource CardBackgroundFillColorDefault}">
+                    
+                    
+                </Grid>
+            </Grid>
         </Grid>
     </Grid>
 </Page>

@@ -19,14 +19,14 @@ using Windows.Foundation.Collections;
 // To learn more about WinUI, the WinUI project structure,
 // and more about our project templates, see: http://aka.ms/winui-project-info.
 
-namespace YoHoLauncher.Views.Pages.Games
+namespace YoHoLauncher.Views.Pages.Games.HonkaiImpact3.Pages
 {
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
-    public sealed partial class HonkaiStarRail : Page
+    public sealed partial class Tools : Page
     {
-        public HonkaiStarRail()
+        public Tools()
         {
             this.InitializeComponent();
         }

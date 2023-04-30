@@ -55,7 +55,7 @@
                     x:Uid="GameName_HonkaiImpact3"
                     Content="Honkai Impact 3rd"
                     IsSelected="True"
-                    Tag="YoHoLauncher.Views.Pages.Games.HonkaiImpact3">
+                    Tag="HonkaiImpact3">
                     <NavigationViewItem.Icon>
                         <ImageIcon Source="/Assets/Icons/game-bh3.png" />
                     </NavigationViewItem.Icon>
@@ -63,7 +63,7 @@
                 <NavigationViewItem
                     x:Uid="GameName_GenshinImpact"
                     Content="Genshin Impact"
-                    Tag="YoHoLauncher.Views.Pages.Games.GenshinImpact">
+                    Tag="GenshinImpact">
                     <NavigationViewItem.Icon>
                         <ImageIcon Source="/Assets/Icons/game-ys.png" />
                     </NavigationViewItem.Icon>
@@ -71,7 +71,7 @@
                 <NavigationViewItem
                     x:Uid="GameName_HonkaiStarRail"
                     Content="Honkai: Star Rail"
-                    Tag="YoHoLauncher.Views.Pages.Games.HonkaiStarRail">
+                    Tag="HonKaiStarRail">
                     <NavigationViewItem.Icon>
                         <ImageIcon Source="/Assets/Icons/game-sr.png" />
                     </NavigationViewItem.Icon>
@@ -79,7 +79,7 @@
                 <NavigationViewItem
                     x:Uid="GameName_ZenlessZoneZero"
                     Content="Zenless Zone Zero"
-                    Tag="YoHoLauncher.Views.Pages.Games.ZenlessZoneZero">
+                    Tag="ZenlessZoneZero">
                     <NavigationViewItem.Icon>
                         <ImageIcon Source="/Assets/Icons/game-zzz.png" />
                     </NavigationViewItem.Icon>
@@ -91,7 +91,7 @@
                     x:Uid="Content_Settings"
                     Icon="Setting"
                     Content="Settings"
-                    Tag="YoHoLauncher.Views.Pages.Setting" />
+                    Tag="Settings" />
             </NavigationView.FooterMenuItems>
             
             <Frame

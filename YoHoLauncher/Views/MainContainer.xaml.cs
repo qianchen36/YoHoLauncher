@@ -52,14 +52,19 @@ namespace YoHoLauncher.Views
             _XamlRoot = XamlRoot;
 
             App.MainWindow.SetTitleBar(AppTitleBar);
-            MainFrame.Navigate(typeof(Pages.Games.HonkaiImpact3));
+            MainFrame.Navigate(typeof(Pages.Games.HonkaiImpact3.Container));
 
             RefreshDragArea();
         }
 
         private void MainNav_ItemInvoked(NavigationView sender, NavigationViewItemInvokedEventArgs args)
         {
-            MainFrame.Navigate(Type.GetType(((NavigationViewItem)args.InvokedItemContainer).Tag.ToString()));
+            if (((NavigationViewItem)args.InvokedItemContainer).Tag.ToString() == "Settings")
+                MainFrame.Navigate(typeof(Pages.Setting));
+            else MainFrame.Navigate(Type.GetType("YoHoLauncher.Views.Pages.Games."
+                                    + ((NavigationViewItem)args.InvokedItemContainer).Tag.ToString()
+                                    + ".Container"));
+
         }
 
         private void MainNav_BackRequested(NavigationView sender, NavigationViewBackRequestedEventArgs args)
@@ -71,11 +76,25 @@ namespace YoHoLauncher.Views
         {
             foreach (NavigationViewItem item in MainNav.MenuItems.Union(MainNav.FooterMenuItems).Cast<NavigationViewItem>())
             {
-                if (Type.GetType((string)item.Tag) == e.SourcePageType)
+                if (item.Tag.ToString() == "Settings")
                 {
-                    MainNav.SelectedItem = item;
-                    item.IsSelected = true;
-                    return;
+                    if (typeof(Pages.Setting) == e.SourcePageType)
+                    {
+                        MainNav.SelectedItem = item;
+                        item.IsSelected = true;
+                        return;
+                    }
+                }
+                else
+                {
+                    if (Type.GetType("YoHoLauncher.Views.Pages.Games."
+                                    + item.Tag.ToString()
+                                    + ".Container") == e.SourcePageType)
+                    {
+                        MainNav.SelectedItem = item;
+                        item.IsSelected = true;
+                        return;
+                    }
                 }
             }
         }

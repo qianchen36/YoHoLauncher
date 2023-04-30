@@ -19,14 +19,14 @@ using Windows.Foundation.Collections;
 // To learn more about WinUI, the WinUI project structure,
 // and more about our project templates, see: http://aka.ms/winui-project-info.
 
-namespace YoHoLauncher.Views.Pages.Games
+namespace YoHoLauncher.Views.Pages.Games.ZenlessZoneZero
 {
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
-    public sealed partial class HonkaiImpact3 : Page
+    public sealed partial class Container : Page
     {
-        public HonkaiImpact3()
+        public Container()
         {
             this.InitializeComponent();
         }
