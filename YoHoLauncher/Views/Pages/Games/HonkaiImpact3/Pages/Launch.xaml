@@ -8,10 +8,45 @@
     xmlns:local="using:YoHoLauncher.Views.Pages.Games.HonkaiImpact3.Pages"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    mc:Ignorable="d"
-    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    mc:Ignorable="d">
 
     <Grid>
-
+        <Grid.Background>
+            <ImageBrush ImageSource="/Assets/Backgrounds/default.png" Stretch="UniformToFill" />
+        </Grid.Background>
+        
+        <Button
+            x:Name="Launch_Button"
+            Style="{ThemeResource AccentButtonStyle}"
+            Width="270"
+            Height="75"
+            Margin="0,0,120,80"
+            HorizontalAlignment="Right"
+            VerticalAlignment="Bottom">
+            
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                
+                <TextBlock
+                    x:Uid="Text_LaunchGame"
+                    Grid.Row="0"
+                    HorizontalAlignment="Center"
+                    FontSize="16"
+                    FontWeight="SemiBold"
+                    Foreground="White"
+                    Text="Launch Game" />
+                <TextBlock
+                    Grid.Row="1"
+                    HorizontalAlignment="Center"
+                    FontSize="13"
+                    Foreground="White"
+                    Text="Game Version"
+                    TextTrimming="CharacterEllipsis"
+                    TextWrapping="NoWrap" />
+            </Grid>
+        </Button>
     </Grid>
 </Page>

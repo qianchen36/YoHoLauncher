@@ -55,6 +55,7 @@ namespace YoHoLauncher.Views
             MainFrame.Navigate(typeof(Pages.Games.HonkaiImpact3.Container));
 
             RefreshDragArea();
+            
         }
 
         private void MainNav_ItemInvoked(NavigationView sender, NavigationViewItemInvokedEventArgs args)

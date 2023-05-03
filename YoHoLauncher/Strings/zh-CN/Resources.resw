@@ -144,4 +144,7 @@
   <data name="MainContainer_Title.Text" xml:space="preserve">
     <value>HoYo! Launcher</value>
   </data>
+  <data name="Text_LaunchGame.Text" xml:space="preserve">
+    <value>启动游戏</value>
+  </data>
 </root>

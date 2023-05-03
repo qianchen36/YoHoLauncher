@@ -26,18 +26,20 @@ namespace YoHoLauncher
     /// <summary>
     /// An empty window that can be used on its own or navigated to within a Frame.
     /// </summary>
-    public sealed partial class MainWindow : WinUIEx.WindowEx
+    public sealed partial class MainWindow : WindowEx
     {
         public MainWindow()
         {
             this.InitializeComponent();
+
+            // Init Window
             this.CenterOnScreen();
             AppWindow.TitleBar.ExtendsContentIntoTitleBar = true;
             AppWindow.TitleBar.ButtonBackgroundColor = Colors.Transparent;
-            // AppWindow.TitleBar.ButtonHoverBackgroundColor = Colors.Transparent;
             AppWindow.TitleBar.ButtonPressedBackgroundColor = Colors.Transparent;
             AppWindow.TitleBar.ButtonInactiveBackgroundColor = Colors.Transparent;
 
+            // Is Mica Feature Usable
             this.Backdrop = Environment.OSVersion.Version.Build >= 22000
             ? new MicaSystemBackdrop() { Kind = Microsoft.UI.Composition.SystemBackdrops.MicaKind.BaseAlt }
             : new AcrylicSystemBackdrop()
@@ -48,7 +50,8 @@ namespace YoHoLauncher
                 DarkFallbackColor = Colors.Black
             };
 
-            // Navigate to "HomePage" or "SetupPage"
+            // Navigate to "MainPage" or "SetupPage"
+            /** TODO **/
             MainFrame.Navigate(typeof(Views.MainContainer));
         }
     }

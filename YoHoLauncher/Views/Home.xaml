@@ -12,6 +12,6 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid>
-
+        <Image Source="/Assets/icon.ico" />
     </Grid>
 </Page>
